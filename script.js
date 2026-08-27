@@ -11,6 +11,22 @@ document.querySelectorAll('a[href="#"]').forEach((link) => {
   link.addEventListener('click', (event) => event.preventDefault());
 });
 
+document.querySelectorAll('.marquee > div').forEach((track) => {
+  const content = track.innerHTML.trim();
+  const group = document.createElement('span');
+  group.className = 'marquee-group';
+  group.innerHTML = content;
+  track.replaceChildren(group);
+
+  while (group.scrollWidth < window.innerWidth + 80) {
+    group.insertAdjacentHTML('beforeend', content);
+  }
+
+  const duplicate = group.cloneNode(true);
+  duplicate.setAttribute('aria-hidden', 'true');
+  track.append(duplicate);
+});
+
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const nav = document.querySelector('.site-nav');
 const progress = document.querySelector('.scroll-progress span');
