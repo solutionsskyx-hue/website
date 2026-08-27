@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contact SkyX Solutions</title>
+    <meta name="description" content="Start your digital transformation journey with SkyX Solutions." />
+    <link rel="icon" href="/public/favicon.png" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="site-nav">
+      <a class="brand" href="/#hero" aria-label="SkyX home"><img src="/public/assets/skyx-logo.png" alt="SkyX" /></a>
+      <nav aria-label="Primary navigation"><a href="/#product">Product</a><a href="/#process">Process</a><a href="/#benefits">Benefits</a></nav>
+      <a class="button button-dark" href="/get-started/">Get Started <span aria-hidden="true">↗</span></a>
+    </header>
+    <main class="contact-page">
+      <section class="contact-hero">
+        <p class="contact-mark">SKYX</p>
+        <div class="contact-heading"><h1>Contact Skyx Solutions</h1><h2>We’d love to hear from you.</h2></div>
+        <form id="contact-form" class="contact-form">
+          <label><span>Name</span><input name="name" type="text" placeholder="Jane Smith" required /></label>
+          <label><span>Email</span><input name="email" type="email" placeholder="jane@framer.com" required /></label>
+          <label><span>Message</span><textarea name="message" placeholder="Your message…" required></textarea></label>
+          <button type="submit">Submit</button>
+          <p class="form-status" role="status" aria-live="polite"></p>
+        </form>
+        <p class="secure-note"><span>✓</span> Your data is securely submitted and protected with us.</p>
+        <a class="home-link" href="/">← Home</a>
+      </section>
+    </main>
+    <footer class="footer"><div class="footer-top"><a class="brand" href="/"><img src="/public/assets/skyx-logo.png" alt="SkyX" /></a><div class="footer-links"><a href="/#product">Product</a><a href="/#benefits">Benefits</a><a href="/get-started/">Get Started</a></div><div class="socials"><a href="#" aria-label="Instagram">◎</a><a href="#" aria-label="LinkedIn">in</a><a href="#" aria-label="X">𝕏</a></div></div><div class="footer-bottom"><span>© 2025 SKYX</span><span>Driving Saudi Arabia's digital future.</span></div></footer>
+    <script src="/script.js"></script>
+    <script>
+      const form = document.querySelector('#contact-form');
+      form.addEventListener('submit', (event) => {
+        event.preventDefault();
+        form.querySelector('.form-status').textContent = 'Thank you — your message is ready for the SkyX team.';
+        form.reset();
+      });
+    </script>
+  </body>
+</html>
